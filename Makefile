@@ -16,4 +16,4 @@ run:
 	#docker run -it --rm --net spark-net -p 80:8080 -v $(shell pwd)/notebook:/opt/zeppelin/notebook zeppelin /opt/zeppelin/bin/zeppelin.sh
 
 build:
-	docker build -t earthquakesan/zeppelin:0.7.2 ./zeppelin/.
+	docker build -t ruizhizhong058/zeppelin:0.11.0 ./zeppelin/.

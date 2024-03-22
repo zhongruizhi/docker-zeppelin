@@ -2,7 +2,7 @@ version: "2.1"
 
 services:
   namenode:
-    image: bde2020/hadoop-namenode:1.1.0-hadoop2.8-java8
+    image: ruizhizhong058/hadoop-namenode:3.3.6-java8
     container_name: namenode
     volumes:
       - ./data/namenode:/hadoop/dfs/name
@@ -15,7 +15,7 @@ services:
     networks:
       - spark-net
   datanode:
-    image: bde2020/hadoop-datanode:1.1.0-hadoop2.8-java8
+    image: ruizhizhong058/hadoop-datanode:3.3.6-java8
     container_name: datanode
     volumes:
       - ./data/datanode:/hadoop/dfs/data
@@ -30,7 +30,7 @@ services:
     networks:
       - spark-net
   spark-master:
-    image: bde2020/spark-master:2.1.0-hadoop2.8-hive-java8
+    image: ruizhizhong058/spark-master:3.5.1-hadoop3.3.6
     container_name: spark-master
     ports:
       - "8080:8080"
@@ -48,7 +48,7 @@ services:
     networks:
       - spark-net
   spark-worker:
-    image: bde2020/spark-worker:2.1.0-hadoop2.8-hive-java8
+    image: ruizhizhong058/spark-worker:3.5.1-hadoop3.3.6
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
     environment:
